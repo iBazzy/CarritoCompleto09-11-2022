@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar color="danger">
+    <ion-title>Aumentar Cantidad</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <h1>Recuerda que debes ingresar una cantidad valida!</h1>
+  </ion-card>
+  <ion-card>
+    <form [formGroup]="carritoMod" novalidate (ngSubmit)="modificarCarrito()">
+      <ion-item>
+        <ion-label>Cantidad: </ion-label><br>
+        <ion-input formControlName="cantidad" type="number"></ion-input>
+        <ion-note color="danger" slot="error"
+          *ngIf="campo('cantidad').invalid  && campo('cantidad').errors && campo('cantidad').errors.required  ">
+          x
+          El campo es Requerido
+        </ion-note>
+      </ion-item>
+      <ion-item>
+        <ion-button [disabled]="carritoMod.invalid " role="submit" type="submit">
+          Guardar
+        </ion-button>
+      </ion-item>
+    </form>
+  </ion-card>
+</ion-content>

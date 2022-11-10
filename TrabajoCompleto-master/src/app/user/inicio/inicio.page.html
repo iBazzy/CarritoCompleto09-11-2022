@@ -1,0 +1,31 @@
+<ion-content>
+  <ion-app>
+    <ion-menu contentId="main-content">
+      <ion-header>
+        <ion-toolbar color="danger">
+          <ion-title>Menú</ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="ion-padding">
+        <ion-button expand="block" [routerLink]="['/listado']">Productos</ion-button>
+
+        <ion-button  expand="block" (click)="salir()"> Salir</ion-button>
+      </ion-content>
+    </ion-menu>
+    <div class="ion-page" id="main-content">
+      <ion-header>
+        <ion-toolbar color="danger">
+          <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+          </ion-buttons>
+          <ion-title>Inicio</ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="ion-padding">
+        <center><h1>¿Quienes Somos?</h1></center>
+        <ion-img src="data:image/png;base64,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"></ion-img>
+        <p>PC Factory, tu tienda de computación y tecnología en Santiago - Chile. ¡Compra los insumos, accesorios y artículos con la mejor calidad y precio que buscas!</p>
+      </ion-content>
+    </div>
+  </ion-app>
+</ion-content>

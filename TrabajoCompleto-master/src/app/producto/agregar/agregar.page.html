@@ -1,0 +1,158 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Agregar <br> Producto</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <form [formGroup]="formulario" novalidate (ngSubmit)="guardarImagen()" >
+      <ion-item>
+        <ion-label>Nombre Notebook</ion-label><br>
+        <ion-input formControlName="nombre" type="text"></ion-input>
+        <ion-note color="danger" slot="error"
+          *ngIf="campo('nombre').invalid  && campo('nombre').errors && campo('nombre').errors.required  ">
+          El campo es Requerido
+        </ion-note>
+        <ion-note color="danger" slot="error"
+          *ngIf="campo('nombre').invalid  && campo('nombre').errors && campo('nombre').errors.maxlength  ">
+          Los caracteres maximos son 25
+        </ion-note>
+        <ion-note color="danger" slot="error"
+          *ngIf="campo('nombre').invalid  && campo('nombre').errors && campo('nombre').errors.minlength ">
+          Los caracteres minimos son 3
+        </ion-note>
+      </ion-item>
+      <ion-item>
+        <ion-label>Imagen Notebook</ion-label>
+        <ion-input  (change)="subirImagen($event)" type="file" formControlName="imagen"></ion-input>
+        <ion-note slot="error"
+        *ngIf="campo('imagen').invalid  && campo('imagen').errors && campo('imagen').errors.required" > Este campo es
+          requerido
+        </ion-note>
+      </ion-item>
+      <ion-item>
+        <ion-label>Detalle</ion-label><br>
+        <ion-input formControlName="detalle" type="text"></ion-input>
+        <ion-note color="danger" slot="error"
+          *ngIf="campo('detalle').invalid  && campo('detalle').errors && campo('detalle').errors.required  ">
+          El campo es Requerido
+        </ion-note>
+        <ion-note color="danger" slot="error"
+          *ngIf="campo('detalle').invalid  && campo('detalle').errors && campo('detalle').errors.maxlength  ">
+          Los caracteres maximos son 100
+        </ion-note>
+        <ion-note color="danger" slot="error"
+          *ngIf="campo('detalle').invalid  && campo('detalle').errors && campo('detalle').errors.minlength ">
+          Los caracteres minimos son 2
+        </ion-note>
+      </ion-item>
+      <ion-item>
+        <ion-label>Marca</ion-label><br>
+        <ion-input formControlName="marca" type="text"></ion-input>
+        <ion-note color="danger" slot="error"
+          *ngIf="campo('marca').invalid  && campo('marca').errors && campo('marca').errors.required  ">
+          El campo es Requerido
+        </ion-note>
+        <ion-note color="danger" slot="error"
+          *ngIf="campo('marca').invalid  && campo('marca').errors && campo('marca').errors.maxlength  ">
+          Los caracteres maximos son 30
+        </ion-note>
+        <ion-note color="danger" slot="error"
+          *ngIf="campo('marca').invalid  && campo('marca').errors && campo('marca').errors.minlength ">
+          Los caracteres minimos son 3
+        </ion-note>
+      </ion-item>
+      <ion-item>
+        <ion-label>Categoria</ion-label><br>
+        <ion-input formControlName="categoria" type="text"></ion-input>
+        <ion-note color="danger" slot="error"
+          *ngIf="campo('categoria').invalid  && campo('categoria').errors && campo('categoria').errors.required  ">
+          El campo es Requerido
+        </ion-note>
+        <ion-note color="danger" slot="error"
+          *ngIf="campo('categoria').invalid  && campo('categoria').errors && campo('categoria').errors.maxlength  ">
+          Los caracteres maximos son 30
+        </ion-note>
+        <ion-note color="danger" slot="error"
+          *ngIf="campo('categoria').invalid  && campo('categoria').errors && campo('categoria').errors.minlength ">
+          Los caracteres minimos son 3
+        </ion-note>
+      </ion-item>
+      <ion-item>
+        <ion-label>Procesador</ion-label><br>
+        <ion-input formControlName="procesador" type="text"></ion-input>
+        <ion-note color="danger" slot="error"
+          *ngIf="campo('procesador').invalid  && campo('procesador').errors && campo('procesador').errors.required  ">
+          El campo es Requerido
+        </ion-note>
+        <ion-note color="danger" slot="error"
+          *ngIf="campo('procesador').invalid  && campo('procesador').errors && campo('procesador').errors.maxlength  ">
+          Los caracteres maximos son 30
+        </ion-note>
+        <ion-note color="danger" slot="error"
+          *ngIf="campo('procesador').invalid  && campo('procesador').errors && campo('procesador').errors.minlength ">
+          Los caracteres minimos son 3
+        </ion-note>
+      </ion-item>
+      <ion-item>
+        <ion-label>Memoria Interna</ion-label><br>
+        <ion-input formControlName="memoriaInterna" type="text"></ion-input>
+        <ion-note color="danger" slot="error"
+          *ngIf="campo('memoriaInterna').invalid  && campo('memoriaInterna').errors && campo('memoriaInterna').errors.required  ">
+          El campo es Requerido
+        </ion-note>
+        <ion-note color="danger" slot="error"
+          *ngIf="campo('memoriaInterna').invalid  && campo('memoriaInterna').errors && campo('memoriaInterna').errors.maxlength  ">
+          Los caracteres maximos son 100
+        </ion-note>
+        <ion-note color="danger" slot="error"
+          *ngIf="campo('memoriaInterna').invalid  && campo('memoriaInterna').errors && campo('memoriaInterna').errors.minlength ">
+          Los caracteres minimos son 3
+        </ion-note>
+      </ion-item>
+      <ion-item>
+        <ion-label>RAM</ion-label><br>
+        <ion-input formControlName="ram" type="text"></ion-input>
+        <ion-note color="danger" slot="error"
+          *ngIf="campo('ram').invalid  && campo('ram').errors && campo('ram').errors.required  ">
+          El campo es Requerido
+        </ion-note>
+        <ion-note color="danger" slot="error"
+          *ngIf="campo('ram').invalid  && campo('ram').errors && campo('ram').errors.maxlength  ">
+          Los caracteres maximos son 30
+        </ion-note>
+        <ion-note color="danger" slot="error"
+          *ngIf="campo('ram').invalid  && campo('ram').errors && campo('ram').errors.minlength ">
+          Los caracteres minimos son 3
+        </ion-note>
+      </ion-item>
+      <ion-item>
+        <ion-label>Precio</ion-label><br>
+        <ion-input formControlName="precio" type="number"></ion-input>
+        <ion-note slot="error"
+          *ngIf="campo('precio').invalid && campo('precio').errors && campo('precio').errors.required ">Este campo es
+          requerido</ion-note>
+        <ion-note slot="error" *ngIf="campo('precio').invalid && campo('precio').errors && campo('precio').errors.min ">
+          El valor minimo es 1</ion-note>
+      </ion-item>
+      <ion-item>
+        <ion-label>Stock</ion-label><br>
+        <ion-input formControlName="stock" type="number"></ion-input>
+        <ion-note slot="error"
+          *ngIf="campo('stock').invalid && campo('stock').errors && campo('stock').errors.required">Este campo es
+          requerido</ion-note>
+        <ion-note slot="error" *ngIf="campo('stock').invalid && campo('stock').errors && campo('stock').errors.min ">El
+          valor minimo es 1</ion-note>
+      </ion-item>
+      <ion-item>
+        <ion-button
+          [disabled]="formulario.invalid || imagenCargando"
+        role="submit" type="submit">
+          Guardar
+        </ion-button>
+      </ion-item>
+
+    </form>
+  </ion-card>
+</ion-content>
