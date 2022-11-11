@@ -137,15 +137,6 @@
           El valor minimo es 1</ion-note>
       </ion-item>
       <ion-item>
-        <ion-label>Stock</ion-label><br>
-        <ion-input formControlName="stock" type="number"></ion-input>
-        <ion-note slot="error"
-          *ngIf="campo('stock').invalid && campo('stock').errors && campo('stock').errors.required">Este campo es
-          requerido</ion-note>
-        <ion-note slot="error" *ngIf="campo('stock').invalid && campo('stock').errors && campo('stock').errors.min ">El
-          valor minimo es 1</ion-note>
-      </ion-item>
-      <ion-item>
         <ion-button
           [disabled]="formulario.invalid || imagenCargando"
         role="submit" type="submit">

@@ -25,13 +25,10 @@
     <ion-item>
       <ion-label>${{ productoActivo.precio |currency: 'CLP'}}</ion-label>
     </ion-item>
-    <ion-item>
-      <ion-label>Disponible:{{productoActivo.stock}}</ion-label>
-    </ion-item>
     <ion-grid>
       <ion-row>
         <ion-col size="12">
-          <ion-button type="submit" (click)="addToCart(productoActivo)" color="danger" >
+          <ion-button type="submit" (click)="addToCart(productoActivo.nombre,productoActivo.precio,productoActivo.cantidad,productoActivo.id,usuarioActivo.id,productoActivo.imagen)" color="danger" >
             <ion-icon name="add-outline"></ion-icon>
           </ion-button>
         </ion-col>

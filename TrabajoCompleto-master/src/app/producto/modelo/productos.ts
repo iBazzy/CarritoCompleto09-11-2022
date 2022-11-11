@@ -1,8 +1,9 @@
+
+
 export interface Productos {
   nombre: string;
   detalle: string;
   precio: number;
-  stock: number;
   imagen: string;
   marca: string;
   categoria: string;
@@ -10,6 +11,7 @@ export interface Productos {
   ram: string;
   memoriaInterna: string;
   cantidad:number;
+  usuario:number;
 }
 export interface idProducto extends Productos{
   id: number;

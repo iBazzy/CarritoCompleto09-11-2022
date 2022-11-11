@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { IonInfiniteScroll } from '@ionic/angular';
 import { idProducto, Productos } from 'src/app/producto/modelo/productos';
+import { idUsuario } from 'src/app/producto/modelo/user';
 import { TiendaService } from 'src/app/servicio/tienda.service';
 
 @Component({
@@ -33,10 +34,6 @@ export class ListadoPage implements OnInit {
   public obtenerMasNote(){
     this.notebookApi.obternerTodo();
   }
-  addToCart(product){
-    this.notebookApi.añadirCarrito(product);
-    alert('PRODUCTO AGREGADO!');
-    console.log(this.producto);
-  }
+
 
   }

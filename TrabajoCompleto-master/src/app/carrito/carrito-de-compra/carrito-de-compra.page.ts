@@ -4,6 +4,7 @@ import { idProducto, NotebookModificar, Productos } from 'src/app/producto/model
 import { TiendaService } from 'src/app/servicio/tienda.service';
 import { FormBuilder, FormGroup,Validators, FormControl} from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { idUsuario } from 'src/app/producto/modelo/user';
 
 @Component({
   selector: 'app-carrito-de-compra',
@@ -31,11 +32,11 @@ export class CarritoDeCompraPage implements OnInit {
 
   }
 
-  public incrementarProduct(item: any){
+  public incrementarProduct(carrito){
     if(this.cart.cantidad == 1){
       this.cart.cantidad +=1;
     }
-    this.notebookApi.añadirCarrito(item);
+    this.notebookApi.añadirCarrito(carrito);
     console.log('Producto Aumentado en 1')
   }
 

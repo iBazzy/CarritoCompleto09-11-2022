@@ -4,6 +4,8 @@ import { Observable, BehaviorSubject, pipe } from 'rxjs';
 import { delay, map } from 'rxjs/operators';
 import { idProducto, NotebookModificar} from '../producto/modelo/productos';
 import { Productos } from '../producto/modelo/productos';
+import { idUsuario } from '../producto/modelo/user';
+import { Carrito } from '../producto/modelo/carrito';
 @Injectable({
   providedIn: 'root'
 })
@@ -17,7 +19,7 @@ export class TiendaService {
   //API PRODUCTO END<<<---------->>>
 
   //API CARRITO <----------->
-  cart=[];
+  cart:Carrito[]=[];
   private contadorItem = new BehaviorSubject(0);
   public urlCarrito="http://localhost:3000/carrito";
   Productos: any;
@@ -63,9 +65,9 @@ export class TiendaService {
 
 
   //METODOS CARRITO
-  public añadirCarrito( productos ){
-      return this.http.post<Array<Productos>[]>(`${this.urlCarrito}`,productos).subscribe( res =>{
-         this.cart.push(productos);
+  public añadirCarrito( carrito ){
+      return this.http.post<Array<Carrito>[]>(`${this.urlCarrito}`,carrito).subscribe( res =>{
+         this.cart.push(carrito);
 
       })
 
@@ -87,12 +89,16 @@ export class TiendaService {
   public eliminarProducto(id: number): Observable<any>{
     return this.http.delete(`${this.urlCarrito}/${id}`)
   }
+
   public listarProductos(){
-    return this.http.get(`${this.urlCarrito}`);
+    return this.http.get<idUsuario>(`${this.urlCarrito}`);
   }
 
   public obternerCarrito(){
     return this.cart;
   }
-
+// END METODOS CARRRITO---->
+public getIdUser(id:number):Observable<idUsuario | null>{
+  return this.http.get<idUsuario | null>(`${this.urlUsuari}/${id}`)
+}
 }

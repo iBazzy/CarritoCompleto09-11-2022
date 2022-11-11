@@ -22,7 +22,6 @@ export class AgregarPage implements OnInit {
         detalle:['',[Validators.required,Validators.minLength(2)
           ,Validators.maxLength(100)]],
         precio:[,[Validators.required,Validators.min(1)]],
-        stock:[,[Validators.required,Validators.min(1)]],
         imagen:['',[Validators.required]],
         cantidad:[1,[Validators.required]],
         marca:['',[Validators.required,Validators.min(3),Validators.max(30)]],
@@ -30,7 +29,7 @@ export class AgregarPage implements OnInit {
         procesador:['',[Validators.required,Validators.min(3),Validators.max(30)]],
         ram:['',[Validators.required,Validators.min(3),Validators.max(1000)]],
         memoriaInterna:['',[Validators.required,Validators.min(3),Validators.max(1000)]],
-        total:[0]
+
       })
     }
 
